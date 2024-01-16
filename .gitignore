@@ -102,3 +102,19 @@ notebooks/DET_curve*
 .mypy_cache/
 
 biometrics_venv
+
+*.txt
+# *.png
+
+flx/data/iso_encoder_decoder/ci/
+flx/data/iso_encoder_decoder/isoTemplate/
+# notebooks/
+!notebooks/*.ipynb
+# !notebooks/convert_tiff_to_png.ipynb
+*.pyt
+log.*
+notebooks/example-dataset/
+notebooks/fvc_dataset/
+notebooks/fvc2002_model/
+notebooks/FVC2004_DB2A/
+notebooks/model/
