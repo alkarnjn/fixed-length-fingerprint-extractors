@@ -105,6 +105,7 @@ biometrics_venv
 
 *.txt
 # *.png
+*.ist
 
 flx/data/iso_encoder_decoder/ci/
 flx/data/iso_encoder_decoder/isoTemplate/
@@ -118,3 +119,4 @@ notebooks/fvc_dataset/
 notebooks/fvc2002_model/
 notebooks/FVC2004_DB2A/
 notebooks/model/
+flx/data/iso_encoder_decoder/anguli_imagenet_ist/
