@@ -5,7 +5,7 @@ from math import *
 
 def to_iso19794(txtpath, isopath):
     # width, height = 500, 610
-    width, height = 275, 400
+    width, height = 400, 500
     b_array = bytearray()
     with open(txtpath, "r") as textfile:
         lines = textfile.readlines()
@@ -29,6 +29,7 @@ def to_iso19794(txtpath, isopath):
             int(float(line[3])),
             int(float(line[4].strip())),
         )
+        min_type = min_type if min_type<3 else 1
         byte_list[1] = x % 256
         byte_list[0] = x // 256 + min_type * 64
         byte_list[2] = y // 256
@@ -48,8 +49,11 @@ import os
 from pathlib import Path
 
 def main():
-    txt_folder = Path("/home/rs/21CS91R01/datasets/anguli_imagenet")
-    iso_folder = Path("/home/rs/21CS91R01/research/fixed-length-fingerprint-extractors/flx/data/iso_encoder_decoder/anguli_imagenet_ist")
+    # txt_folder = Path("/home/rs/21CS91R01/datasets/anguli_imagenet")
+    txt_folder = Path("/home/rs/21CS91R01/datasets/FVC2006/FingerFlow/FVC2006_DB3A_m/")
+    # iso_folder = Path("/home/rs/21CS91R01/research/fixed-length-fingerprint-extractors/flx/data/iso_encoder_decoder/anguli_imagenet_ist")
+    iso_folder = Path("/home/rs/21CS91R01/research/fixed-length-fingerprint-extractors/flx/data/iso_encoder_decoder/FVC2006_DB3A_m")
+
     if not iso_folder.exists():
         iso_folder.mkdir(parents=True,exist_ok=True)
 
