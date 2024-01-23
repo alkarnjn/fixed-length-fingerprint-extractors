@@ -5,10 +5,9 @@
 ### Install dependencies
 
 ```bash
-conda create -n flx python=3.10 pip -y
+conda create -n flx python=3.10 pip pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia -y
 conda activate flx
 pip install -r requirements.txt
-conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 
 ```
 ### delete the environment
