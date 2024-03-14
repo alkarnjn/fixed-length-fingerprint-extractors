@@ -104,7 +104,7 @@ notebooks/DET_curve*
 biometrics_venv
 
 *.txt
-# *.png
+*.png
 *.ist
 
 flx/data/iso_encoder_decoder/ci/
