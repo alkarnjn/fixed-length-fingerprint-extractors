@@ -84,7 +84,8 @@ class SFingeMinutiaMapLoader(MinutiaMapLoader):
         )[1:]
         locs = np.array([(m[1], m[2]) for m in minutiae])
         oris = np.array([m[3] for m in minutiae])
-        return transform_to_input_size(locs, 560, 416), oris
+        # return transform_to_input_size(locs, 560, 416), oris
+        return transform_to_input_size(locs, 400, 275), oris
 
 
 def _read_mnt_file(filepath: str) -> tuple[np.ndarray, np.ndarray]:
