@@ -1,7 +1,7 @@
 from typing import Union
 from os.path import join
 import json
-
+from pathlib import Path
 import numpy as np
 
 from flx.data.dataset import DataLoader, Identifier, IdentifierSet
@@ -34,12 +34,14 @@ class EmbeddingLoader(DataLoader):
 
         @param outdir : absolute path of the output directory
         """
+        if not Path(outdir).exists():
+            Path(outdir).mkdir(parents=True)
         outarr = self.numpy()
         outarr = outarr.astype(np.float32)
         np.save(join(outdir, "embeddings.npy"), outarr)
         with open(join(outdir, "ids.json"), "w") as file:
             json.dump(
-                Identifier.ids_to_json(self._id_to_embedding.keys()), file, indent=None
+                Identifier.ids_to_json(self.ids._ids), file, indent=None
             )
 
     @staticmethod
